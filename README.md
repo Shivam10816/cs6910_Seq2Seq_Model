@@ -9,6 +9,14 @@ Code for EncoderRNN , DecoderRNN and training seq2seq model can be found in file
 ## How to run **Assignment3.ipynb** ? 
 
 -----
+
+* change wandb login key to your api key
+```Python
+%%capture
+!pip install wandb
+import wandb
+wandb.login(key ="9c0cf96a5b886197f51883781f17b735b2ac32b1")
+```
 For kaggle . If you want to use kaggle comment out following code in Notebook else comment it.
 -----
 1. Import Notebook to kaggle
@@ -76,7 +84,7 @@ Best_Run(data)
 1. This file will run only in colab
 2. To run this file in colab upload this file and Data of hin folder (only csv files)
 3. Set accelarator to gpu
-4. run following commnads with appropriate parameters
+4. run following commnads with appropriate parameters (default parameters set to best run I got in experiments)
 ```Python
 !pip install wandb
 !python trainSeq2Seq.py -key "Wandb_API_Key" -wp 'project_name' -we 'sweep_name' -ct "RNN" -e 30 -b 16 -enc 1 -dec 1 -lr 0.001 -ebs 64 -hs 1024 -drp 0.2 -tr 0.0 -bdr "Yes" -at "No" 
