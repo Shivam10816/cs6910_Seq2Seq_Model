@@ -5,7 +5,71 @@ Student Information: Shivam Kharat (CS22M082)
 
 Find Wandb report here : [https://rb.gy/dvqrgv](https://wandb.ai/vilgax/CS6910_Assignment3/reports/ASSIGNMENT-3--Vmlldzo0MzI5OTcy?accessToken=b6218h2p1zh5xkb0scyh3reka1x5ka220tlwcgaurpand2p8ragrsmkn9b91ekfi)
 ---
-Code for EncoderRNN , DecoderRNN and training seq2seq model can be found in file named **Assignment3.ipynb** 
+Code for EncoderRNN , DecoderRNN and training seq2seq model can be found in file named **Assignment3.ipynb** .
+How to run **Assignment3.ipynb** ? 
+
+-----
+Use following steps for kaggle . If you want to use kaggle comment out following code in Notebook else comment it.
+-----
+1. Import Notebook to kaggle
+2. Add data to folder named dlassgn
+3. make change in data path according to folder
+```Python
+   #------------------------------------For Kaggle interFace---------------------------------
+
+    self.train_df = pd.read_csv(f"/kaggle/input/dlassgnn/hin_train.csv", header = None)
+    self.val_df = pd.read_csv(f"/kaggle/input/dlassgnn/hin_valid.csv", header = None)
+    self.test_df = pd.read_csv(f"/kaggle/input/dlassgnn/hin_test.csv", header = None)
+
+```
+4. Make changes in wandb configurations(Either in wandb sweep or in Best_Run) as required
+5. comment out required code.
+
+```Python
+wandb.finish()
+wandb_runs(data)
+```
+or
+
+```Python
+wandb.finish()  
+Best_Run(data)
+```
+
+--------------------------
+For Colab
+--------------------------
+1. Import Notebook to Colab
+2. Add aksharantar_sampled folder to google drive in location Mydrive
+3. comment out following code
+```Python
+  #------------------------------------For colab interface-------------------------------------
+
+    self.train_df = pd.read_csv(f"drive/MyDrive/aksharantar_sampled/{lang}/{lang}_train.csv", header = None)
+    self.val_df = pd.read_csv(f"drive/MyDrive/aksharantar_sampled/{lang}/{lang}_valid.csv", header = None)
+    self.test_df = pd.read_csv(f"drive/MyDrive/aksharantar_sampled/{lang}/{lang}_test.csv", header = None)
+
+```
+4. In colab you can load any data you want by providing aprropriate lang name to following code section
+
+```Python
+data = EncodedData("hin")
+```
+5. Make changes in wandb configurations(Either in wandb sweep or in Best_Run) as required
+6. comment out required code.
+
+```Python
+wandb.finish()
+wandb_runs(data)
+```
+or
+
+```Python
+wandb.finish()  
+Best_Run(data)
+```
+
+
 ## Question 1
 The code for question 1 can be accessed [here](https://github.com/Shivam10816/cs6910_assignment1/blob/main/Q1.ipynb). The program, reads the data from `keras.datasets`, picks one example from each class and logs the same to `wandb`.
 
